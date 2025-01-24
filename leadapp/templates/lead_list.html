@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="border">
+        {%for l in data%}
+    
+        <p>{{l.name}}</p>
+        <p>{{l.email}}</p>
+        <p>{{l.phone_number}}</p>
+        <p>{{l.source}}</p>
+        <p>{{l.status}}</p>
+
+
+        <div><a href="{%url 'lead-add'%}">add</a></div>
+        <div><a href="{%url 'delete' l.id%}">delete</a></div>
+        <div><a href="{%url 'lead-update' l.id%}">update</a></div>
+    
+        {%endfor%}
+
+    </div>
+    
+</body>
+</html>
